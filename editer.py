@@ -5,3 +5,5 @@ print("NAME:"+name)                             #输出姓名
 print("ID:"+number)                             #输出学号
 print("Welcome to BUAA Online Judge!")          #输出欢迎词
 ###
+#######18377016
+##
