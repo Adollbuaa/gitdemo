@@ -83,3 +83,24 @@ def text_analyze1(essay,Tk1):
     button22.pack(anchor=CENTER)
     button23.pack(anchor=CENTER)
     Tk2.mainloop()
+    def text_analyze2(essay,Tk2):
+    print('文档转换后的单词序列为：')
+    print(','.join(text_apart(essay)))
+    print('文档中单词对应的频次为：')
+    print(text_count(text_apart(essay),3))
+def text_apart(essay):
+    essay1=list(essay)
+    alist=list('abcdefghijklmnopqrstuvwxyz')
+    book=[]
+    wordone=''
+    for i in range (len(essay1)):
+        every=essay1[i].lower()
+        if every in alist:
+            wordone+=every
+        else:
+            if wordone=='':
+                wordone=''
+            else:
+                book+=[wordone]
+                wordone=''
+    return book
