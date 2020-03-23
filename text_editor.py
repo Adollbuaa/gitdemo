@@ -104,3 +104,47 @@ def text_apart(essay):
                 book+=[wordone]
                 wordone=''
     return book
+    def text_count(text_count1,x):
+    sumnum=len(text_count1)
+    wordtwo=[]
+    num=[]
+    d={}
+    for i in (text_count1):
+        if i in wordtwo:
+            wordtwo=wordtwo
+            fiction=wordtwo.index(i)
+            num[fiction]+=1
+        else:
+            wordtwo+=[i]
+            num+=[1]
+    for i in range (len(num)):
+        d[wordtwo[i]]=num[i]
+    if x==1:
+        return wordtwo
+    elif x==2:
+        return num
+    elif x==3:
+        return d
+def real_num(real_num1,x):
+    #停用词表
+    stoplist =['a','is','the','in','to']+ ['very', 'ourselves', 'am', 'doesn', 'through', 'me', 'against', 'up', 'just', 'her', 'ours',  'couldn', 'because', 'is', 'isn', 'it', 'only', 'in', 'such', 'too', 'mustn', 'under', 'their', 'if', 'to', 'my', 'himself', 'after', 'why', 'while', 'can', 'each', 'itself', 'his', 'all', 'once', 'herself', 'more', 'our', 'they', 'hasn', 'on', 'ma', 'them', 'its', 'where', 'did', 'll', 'you', 'didn', 'nor', 'as', 'now', 'before', 'those', 'yours', 'from', 'who', 'was', 'm', 'been', 'will', 'into', 'same', 'how', 'some', 'of', 'out', 'with', 's', 'being', 't', 'mightn', 'she', 'again', 'be', 'by', 'shan', 'have', 'yourselves', 'needn', 'and', 'are', 'o', 'these', 'further', 'most', 'yourself', 'having', 'aren', 'here', 'he', 'were', 'but', 'this', 'myself', 'own', 'we', 'so', 'i', 'does', 'both', 'when', 'between', 'd', 'had', 'the', 'y', 'has', 'down', 'off', 'than', 'haven', 'whom', 'wouldn', 'should', 've', 'over', 'themselves', 'few', 'then', 'hadn', 'what', 'until', 'won', 'no', 'about', 'any', 'that', 'for', 'shouldn', 'don', 'do', 'there', 'doing', 'an', 'or', 'ain', 'hers', 'wasn', 'weren', 'above', 'a', 'at', 'your', 'theirs', 'below', 'other', 'not', 're', 'him', 'during', 'which']
+    t=0
+    maxbox1=[]
+    maxbox2=[]
+    wordtwo=text_count(text_apart(real_num1),1)
+    num=text_count(text_apart(real_num1),2)
+    while num!=[]:
+        nummax=max(num)
+        wordmax=wordtwo[num.index(nummax)]
+        wordtwo.remove(wordmax)
+        num.remove(nummax)
+        if wordmax in stoplist:
+            t=t
+        else:
+            maxbox1+=[wordmax]
+            maxbox2+=[nummax]
+            t+=1
+    if x==1:
+        return(maxbox1)
+    if x==2:
+        return(maxbox2)
