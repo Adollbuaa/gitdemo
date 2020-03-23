@@ -187,3 +187,32 @@ def picture(x,y):
     plt.xlabel('Words')
     plt.ylabel('Frequency') 
     plt.show()
+    
+#文本编辑
+def text_keep(Tk1,text_edit,file):
+    newessay=text_edit.get(0.0,"end")
+    g=open(file,'w')
+    g.truncate()
+    g.write(newessay) 
+    essay=newessay
+def  text_service1(Tk1): 
+    Tk4=Tk()
+    Tk4.title('更多帮助')
+    #Tk4.geometry('300x200')
+    service_button1=Button(Tk4,text='Corpus of Contemporary American English (COCA)',command=lambda:text_service2(Tk4))
+    service_button1.grid(column=1,row=1,columnspan=3,rowspan=1)
+    service_button2=Button(Tk4,text='SKELL: corpus examples for learning English',command=lambda:text_service3(Tk4))
+    service_button2.grid(column=1,row=2,columnspan=3,rowspan=1)
+    
+    survice_out=Button(Tk4,text='退出',command=Tk4.destroy)
+    survice_out.grid(column=1,row=3,columnspan=1,rowspan=1)
+def  text_service2(Tk4):
+    webbrowser.open("http://www.english-corpora.org/coca/")
+def  text_service3(Tk4):
+    webbrowser.open("http://skell.sketchengine.co.uk/run.cgi/skell")
+enter_button=Button(top,text='确定',command=lambda:select(textbox1,textbox2,top))
+out_button=Button(top,text='退出',command=top.destroy)
+
+enter_button.grid_configure(column=1,row=5,columnspan=1,rowspan=1)
+out_button.grid_configure(column=2,row=5,columnspan=1,rowspan=1)
+top.mainloop()
