@@ -148,3 +148,42 @@ def real_num(real_num1,x):
         return(maxbox1)
     if x==2:
         return(maxbox2)
+        def text_find1(essay,Tk2):
+    Tk3=Tk()
+    Tk3.title('词频查询')
+    Tk3.geometry('300x200')
+    n=len(text_apart(essay))
+    allword_label=Label(Tk3,text='总词数:'+str(n))
+    none_label1=Label(Tk3,text='')
+    none_label2=Label(Tk3,text='')
+    none_label3=Label(Tk3,text='')
+    first_label=Label(Tk3,text='单词(小写)')
+    then_label=Label(Tk3,text='频次')
+    find_textbox1=Entry(Tk3)
+    find_textbox2=Entry(Tk3)
+    allword_label.grid(column=1,row=1,columnspan=1,rowspan=1)
+    first_label.grid(column=1,row=3,columnspan=1,rowspan=1)
+    then_label.grid(column=1,row=5,columnspan=1,rowspan=1)
+    find_textbox1.grid(column=2,row=3,columnspan=1,rowspan=1)
+    find_textbox2.grid(column=2,row=5,columnspan=1,rowspan=1)
+    none_label1.grid(column=1,row=2,columnspan=1,rowspan=1)
+    none_label2.grid(column=1,row=4,columnspan=1,rowspan=1)
+    none_label3.grid(column=1,row=6,columnspan=1,rowspan=1)
+    
+    button31=Button(Tk3,text='查询',command=lambda:text_find2(essay,find_textbox1,find_textbox2,Tk3,text_count(text_apart(essay),3)))
+    button31.grid(column=1,row=7,columnspan=1,rowspan=1)
+    button32=Button(Tk3,text='退出',command=lambda:Tk3.destroy)
+    button32.grid(column=3,row=7,columnspan=1,rowspan=1)
+def text_find2(essay,find_textbox1,find_textbox2,Tk3,b_d):
+    find1=find_textbox1.get()
+    find2=text_count(text_apart(essay),3)
+    find3=find2[find1]
+    find_textbox2.insert(INSERT,find3)
+    
+    
+def picture(x,y):
+    plt.bar(x[0:6],y[0:6],0.8,label='Key Words')
+    plt.legend()
+    plt.xlabel('Words')
+    plt.ylabel('Frequency') 
+    plt.show()
