@@ -69,3 +69,17 @@ def select(textbox1,textbox2,top):
         tk1label2=Label(Tk1,text='系统有待升级，当前仅支持打开文件状态下保存')
         tk1label2.grid(column=1,row=15,columnspan=3,rowspan=1)
         Tk1.mainloop()
+        #文本助手
+def text_analyze1(essay,Tk1):
+    Tk2=Tk()
+    Tk2.title('文本助手')
+    Tk2.geometry('300x200')
+    button20=Button(Tk2,text='查找词频',command=lambda:text_find1(essay,Tk2))
+    button21=Button(Tk2,text='查看单词与词频',command=lambda:text_analyze2(essay,Tk2))
+    button22=Button(Tk2,text='关键词柱状图',command=lambda:picture(real_num(essay,1),real_num(essay,2)))
+    button23=Button(Tk2,text='关闭',command=Tk2.destroy)
+    button20.pack(anchor=CENTER)
+    button21.pack(anchor=CENTER)
+    button22.pack(anchor=CENTER)
+    button23.pack(anchor=CENTER)
+    Tk2.mainloop()
